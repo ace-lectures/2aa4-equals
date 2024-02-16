@@ -4,8 +4,8 @@ import java.util.Objects;
 
 public class Money {
 
-    protected final int amount;
-    protected final String currencyCode;
+    private final int amount;
+    private final String currencyCode;
 
     public Money(int amount, String currencyCode) {
         this.amount = amount;

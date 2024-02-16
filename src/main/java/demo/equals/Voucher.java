@@ -14,10 +14,4 @@ public class Voucher {
         return this.money;
     }
 
-    public Voucher(int m, String c, String store) {
-        this(store, new Money(m, c));
-    }
-
-
-
 }

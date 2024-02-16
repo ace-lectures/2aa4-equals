@@ -24,7 +24,7 @@ public class Main {
         System.out.println("cash == voucher? " + cash.equals(voucherI));
         System.out.println("----------------");
 
-        Voucher voucher = new Voucher(42, "CAD", "AirCanada");
+        Voucher voucher = new Voucher("AirCanada", new Money(42, "CAD"));
         System.out.println("voucher == cash? " + voucher.equals(cash));
         System.out.println("cash == voucher? " + cash.equals(voucher));
         System.out.println("cash == voucher.value()? " + cash.equals(voucher.value()));
@@ -41,8 +41,8 @@ public class Main {
 
         Team leafs = new Team("Toronto", "hockey");
         System.out.println("Toronto's hockey team? " + nhl.getOrDefault(leafs, "unknown"));
-        System.out.println("Raptors as a key? " + nhl.keySet().contains(leafs));
-        System.out.println("Raptors as an element? " + nhl.keySet().stream().toList().contains(leafs));
+        System.out.println("Leaf as a key? " + nhl.keySet().contains(leafs));
+        System.out.println("Leaf as an element? " + nhl.keySet().stream().toList().contains(leafs));
         System.out.println("----------------");
 
         Map<TeamBoth, String> nhlBis = new HashMap<>();
@@ -50,7 +50,10 @@ public class Main {
         nhlBis.put(new TeamBoth("Toronto", "hockey"), "Maple leafs");
         nhlBis.put(new TeamBoth("Ottawa", "hockey"), "senators");
         nhlBis.put(new TeamBoth("Montreal", "hockey"), "canadiens");
+
         System.out.println("Toronto's hockey team? " + nhlBis.getOrDefault(leafBis, "unknown"));
+        System.out.println("Leaf as a key? " + nhlBis.keySet().contains(leafBis));
+        System.out.println("Leaf as an element? " + nhlBis.keySet().stream().toList().contains(leafBis));
     }
 
 }

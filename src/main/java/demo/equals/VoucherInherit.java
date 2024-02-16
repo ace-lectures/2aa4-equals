@@ -4,12 +4,13 @@ import java.util.Objects;
 
 public class VoucherInherit extends Money {
 
-    protected final String company;
+    private final String company;
 
     public VoucherInherit(int amount, String currencyCode, String company) {
         super(amount, currencyCode);
         this.company = company;
     }
+
 
     @Override
     public boolean equals(Object o) {
